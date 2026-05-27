@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO Tags -->
+  <title>Harry Clark | Professional Blog Writer & Digital Content Expert</title>
+  <meta name="description" content="Harry Clark is a professional blog writer and digital content strategist covering YouTube tools, media converters, music downloads, and tech guides. Explore expert articles on video conversion, MP3 downloads, and more." />
+  <meta name="keywords" content="Harry Clark, professional blog writer, YouTube to MP4, MP3 converter, video downloader, Tubidy, YTMP4, digital content, tech writer" />
+  <meta name="author" content="Harry Clark" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://harryclark.blog/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://harryclark.blog/" />
+  <meta property="og:title" content="Harry Clark | Professional Blog Writer & Digital Content Expert" />
+  <meta property="og:description" content="Harry Clark is a professional blog writer and digital content strategist covering YouTube tools, media converters, music downloads, and tech guides." />
+  <meta property="og:image" content="https://harryclark.blog/og-image.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@harryclarkblog" />
+  <meta name="twitter:title" content="Harry Clark | Professional Blog Writer & Digital Content Expert" />
+  <meta name="twitter:description" content="Expert articles on video conversion, MP3 downloads, YouTube tools, and digital media guides by Harry Clark." />
+  <meta name="twitter:image" content="https://harryclark.blog/twitter-image.jpg" />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Harry Clark",
+    "url": "https://harryclark.blog/",
+    "jobTitle": "Professional Blog Writer",
+    "description": "Professional blog writer and digital content strategist specializing in YouTube tools, media converters, and tech guides.",
+    "sameAs": []
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #1a1208;
+      --cream: #faf7f2;
+      --warm: #f0ebe0;
+      --gold: #b8860b;
+      --rust: #a0400c;
+      --muted: #7a6e60;
+      --line: #ddd4c0;
+      --accent: #c9a84c;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 0 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--gold);
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    nav a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-left: 2rem;
+      opacity: 0.75;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    nav a:hover { opacity: 1; color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        rgba(200,168,76,0.06) 39px,
+        rgba(200,168,76,0.06) 40px
+      );
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.1s forwards;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.25s forwards;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-desc {
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.05rem;
+      color: rgba(250,247,242,0.75);
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.4s forwards;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--ink);
+      text-decoration: none;
+      padding: 0.8rem 2.2rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.55s forwards;
+    }
+    .hero-cta:hover { background: #e0b84a; transform: translateY(-2px); }
+
+    /* ── ABOUT STRIP ── */
+    .about-strip {
+      background: var(--warm);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 3.5rem 2rem;
+    }
+    .about-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-badge {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-radius: 4px;
+    }
+    .about-badge .initials {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--accent);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .about-badge span {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+      font-size: 0.97rem;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
+    .tag {
+      background: var(--ink);
+      color: var(--accent);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+    }
+
+    /* ── ARTICLES SECTION ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 0.8rem;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    .section-header .count {
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* filter tabs */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--accent);
+    }
+
+    /* search */
+    .search-bar {
+      display: flex;
+      margin-bottom: 2.5rem;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .search-bar input {
+      flex: 1;
+      border: none;
+      padding: 0.7rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      background: #fff;
+      outline: none;
+      color: var(--ink);
+    }
+    .search-bar button {
+      background: var(--ink);
+      border: none;
+      color: var(--accent);
+      padding: 0 1.4rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* grid */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .article-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .article-card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
+    }
+    .card-category {
+      background: var(--ink);
+      color: var(--accent);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+    }
+    .card-body {
+      padding: 1rem 1.2rem 1.2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-body a {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      line-height: 1.4;
+      display: block;
+      margin-bottom: 0.6rem;
+      flex: 1;
+    }
+    .card-body a:hover { color: var(--rust); }
+    .card-source {
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .card-source::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    /* pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 3rem;
+    }
+    .page-btn {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      width: 38px;
+      height: 38px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .page-btn.active, .page-btn:hover {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--accent);
+    }
+    .page-info {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0 0.5rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: rgba(250,247,242,0.55);
+      text-align: center;
+      padding: 2.5rem 2rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+    }
+    footer strong { color: var(--accent); }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hidden cards */
+    .article-card.hidden { display: none; }
+
+    @media (max-width: 640px) {
+      .about-inner { grid-template-columns: 1fr; }
+      .about-badge { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">Harry Clark</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#articles">Articles</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Professional Blog Writer</p>
+  <h1>Words That<br><em>Inform</em> & Inspire</h1>
+  <p class="hero-desc">
+    In-depth guides, honest reviews, and practical how-tos covering
+    digital media tools, video conversion, music downloads, and the
+    technology shaping everyday entertainment.
+  </p>
+  <a href="#articles" class="hero-cta">Browse Articles</a>
+</section>
+
+<!-- ABOUT -->
+<section class="about-strip" id="about">
+  <div class="about-inner">
+    <div class="about-badge">
+      <em class="initials">HC</em>
+      <span>Est. 2018</span>
+    </div>
+    <div class="about-text">
+      <h2>About Harry Clark</h2>
+      <p>
+        Harry Clark is a professional blog writer and digital content strategist
+        with over six years of experience creating clear, authoritative guides
+        for readers who want to get more out of online tools and media platforms.
+      </p>
+      <p>
+        His work spans YouTube video conversion, MP3 music downloads, mobile
+        entertainment apps, and platform comparisons — always written with
+        accuracy, clarity, and the everyday user in mind.
+      </p>
+      <p>
+        Whether you need a step-by-step walkthrough or a deep-dive comparison,
+        Harry's articles cut through the noise and deliver answers you can trust.
+      </p>
+      <div class="tags">
+        <span class="tag">YouTube Tools</span>
+        <span class="tag">MP4 Converters</span>
+        <span class="tag">MP3 Downloads</span>
+        <span class="tag">Tubidy</span>
+        <span class="tag">YTMP4</span>
+        <span class="tag">Tech Guides</span>
+        <span class="tag">Mobile Media</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<main id="articles">
+  <div class="section-header">
+    <h2>Published Articles</h2>
+    <span class="count" id="article-count"></span>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Search articles…" />
+    <button onclick="filterArticles()">⌕</button>
+  </div>
+
+  <div class="filter-tabs" id="filter-tabs">
+    <button class="filter-btn active" data-cat="all" onclick="setFilter('all',this)">All</button>
+    <button class="filter-btn" data-cat="ytmp4" onclick="setFilter('ytmp4',this)">YTMP4 / YouTube MP4</button>
+    <button class="filter-btn" data-cat="tubidy" onclick="setFilter('tubidy',this)">Tubidy</button>
+    <button class="filter-btn" data-cat="mp3" onclick="setFilter('mp3',this)">MP3 Converters</button>
+    <button class="filter-btn" data-cat="tools" onclick="setFilter('tools',this)">Downloader Tools</button>
+  </div>
+
+  <div class="articles-grid" id="articles-grid"></div>
+
+  <div class="pagination" id="pagination"></div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>Harry Clark</strong> — Professional Blog Writer &amp; Digital Content Expert</p>
+  <p style="margin-top:0.5rem">All articles are written for informational purposes.</p>
+</footer>
+
+<script>
+const allLinks = [
+  { url: "https://medium.com/@ytmp4/ytmp4-the-ultimate-guide-to-downloading-youtube-videos-ea5ca51be60b", title: "YTMP4 — The Ultimate Guide to Downloading YouTube Videos", cat: "ytmp4" },
+  { url: "https://trandingdailynews.com/best-youtube-to-mp4-converter-tools-for-free", title: "Best YouTube to MP4 Converter Tools for Free", cat: "ytmp4" },
+  { url: "https://froodl.com/downloading-youtube-videos-finding-the-right-mp4-converter", title: "Downloading YouTube Videos: Finding the Right MP4 Converter", cat: "ytmp4" },
+  { url: "https://www.herbaltricks.com/Articles-of-2024/how-download-video-youtube-using-ytmp4", title: "How to Download Video from YouTube Using YTMP4", cat: "ytmp4" },
+  { url: "https://www.ganjingworld.com/news/5-best-youtube-to-mp4-converters-for-mac-windows-ubuntu-ytmp4/1gqqtp1j6ct3g4zhAXgjcy3Y813b1c", title: "5 Best YouTube to MP4 Converters for Mac, Windows & Ubuntu", cat: "ytmp4" },
+  { url: "https://ytmp4-youtube-mp4.blogspot.com/2024/06/best-youtube-video-downloader-tools.html", title: "Best YouTube Video Downloader Tools", cat: "tools" },
+  { url: "https://medium.com/@ytmp4/how-to-download-and-save-mp4-to-iphone-directly-481769568fe2", title: "How to Download and Save MP4 to iPhone Directly", cat: "ytmp4" },
+  { url: "https://onedayhit.com/5-best-free-youtube-to-mp3-converters-in-2024/", title: "5 Best Free YouTube to MP3 Converters in 2024", cat: "mp3" },
+  { url: "https://versatilecommunication.com/how-to-free-download-youtube-to-mp3-and-mp4/", title: "How to Free Download YouTube to MP3 and MP4", cat: "mp3" },
+  { url: "https://1st-street.com/exploring-the-best-youtube-to-mp3-conversion-tools/", title: "Exploring the Best YouTube to MP3 Conversion Tools", cat: "mp3" },
+  { url: "https://uberant.com/article/2039945-ytmp4-the-simple-solution-for-converting-youtube-to-mp4/", title: "YTMP4 — The Simple Solution for Converting YouTube to MP4", cat: "ytmp4" },
+  { url: "https://uberant.com/article/2039952-keepvid-your-reliable-youtube-downloader-for-easy-video-conversions/", title: "KeepVid — Your Reliable YouTube Downloader for Easy Video Conversions", cat: "tools" },
+  { url: "https://www.lifesshortlivefree.com/community/2a-news-and-politics/why-keepvid-is-the-best-youtube-to-mp3-and-mp4-converter-a-deep-dive/", title: "Why KeepVid is the Best YouTube to MP3 and MP4 Converter — A Deep Dive", cat: "tools" },
+  { url: "https://houstonstevenson.com/2024/08/15/how-to-convert-youtube-to-mp3-for-free-on-your-mobile/", title: "How to Convert YouTube to MP3 for Free on Your Mobile", cat: "mp3" },
+  { url: "https://houstonstevenson.com/2024/08/15/ytmp4-the-best-tool-for-downloading-youtube-videos/", title: "YTMP4 — The Best Tool for Downloading YouTube Videos", cat: "ytmp4" },
+  { url: "https://bcrelx.com/top-3-y2mate-alternative-youtube-to-mp4-website-2024/", title: "Top 3 Y2Mate Alternative YouTube to MP4 Websites 2024", cat: "ytmp4" },
+  { url: "https://bcrelx.com/the-best-free-youtube-to-mp3-converters-enhancing-your-audio-experience/", title: "The Best Free YouTube to MP3 Converters — Enhancing Your Audio Experience", cat: "mp3" },
+  { url: "https://photoeditingideas.com/the-best-free-youtube-to-mp3-converter-and-downloader/", title: "The Best Free YouTube to MP3 Converter and Downloader", cat: "mp3" },
+  { url: "https://hollywoodrag.com/free-online-youtube-to-mp3-downloader-converter-tools/", title: "Free Online YouTube to MP3 Downloader Converter Tools", cat: "mp3" },
+  { url: "https://timebusinessnews.com/best-free-youtube-downloader-for-all-platforms-ytmp4/", title: "Best Free YouTube Downloader for All Platforms — YTMP4", cat: "ytmp4" },
+  { url: "https://expertsay.blog/how-to-download-and-convert-youtube-videos-to-mp4-without-software/", title: "How to Download and Convert YouTube Videos to MP4 Without Software", cat: "ytmp4" },
+  { url: "https://nichenest.xyz/how-to-convert-youtube-videos-to-mp4-in-seconds-fast-easy-methods/", title: "How to Convert YouTube Videos to MP4 in Seconds — Fast & Easy Methods", cat: "ytmp4" },
+  { url: "https://nichebase.xyz/how-ytmp4-makes-youtube-to-mp4-conversion-effortless/", title: "How YTMP4 Makes YouTube to MP4 Conversion Effortless", cat: "ytmp4" },
+  { url: "https://articleworld.in/article/best-free-youtube-to-mp4-converters-understanding-options-and-prioritizing-safety", title: "Best Free YouTube to MP4 Converters — Understanding Options and Safety", cat: "ytmp4" },
+  { url: "https://ideaexpress.us/top-features-of-ytmp4-best-tool-for-video-conversion/", title: "Top Features of YTMP4 — Best Tool for Video Conversion", cat: "ytmp4" },
+  { url: "https://insidethenation.com/high-quality-youtube-mp4-downloads-ytmp4/", title: "High-Quality YouTube MP4 Downloads with YTMP4", cat: "ytmp4" },
+  { url: "https://www.lasttrumpnews.com/top-10-youtube-to-mp4-converters-free-paid", title: "Top 10 YouTube to MP4 Converters — Free & Paid", cat: "ytmp4" },
+  { url: "https://www.molecularcloud.org/p/one-click-youtube-to-mp4-converters-that-just-work", title: "One-Click YouTube to MP4 Converters That Just Work", cat: "ytmp4" },
+  { url: "https://expressy.co.in/news/top-7-free-youtube-to-mp4-converters-you-can-trust/", title: "Top 7 Free YouTube to MP4 Converters You Can Trust", cat: "ytmp4" },
+  { url: "https://bipamerica.biz/ytmp4-vs-y2mate-which-youtube-converter-is-better", title: "YTMP4 vs Y2Mate — Which YouTube Converter is Better?", cat: "ytmp4" },
+  { url: "https://www.globalnetbit.com/miscellaneous/5-best-youtube-to-mp4-converters-with-no-watermark/", title: "5 Best YouTube to MP4 Converters with No Watermark", cat: "ytmp4" },
+  { url: "https://www.nashvillenewspress.com/download-youtube-videos-to-mp4-format-without-losing-quality", title: "Download YouTube Videos to MP4 Format Without Losing Quality", cat: "ytmp4" },
+  { url: "https://relxnn.com/why-everyones-using-youtube-to-mp4-converters-in-2025/", title: "Why Everyone's Using YouTube to MP4 Converters in 2025", cat: "ytmp4" },
+  { url: "https://allventurehub.com/top-rated-youtube-to-mp4-tools-that-work-in-any-browser/", title: "Top-Rated YouTube to MP4 Tools That Work in Any Browser", cat: "ytmp4" },
+  { url: "https://trendburst.us/best-youtube-to-mp4-converters-for-android-iphone/", title: "Best YouTube to MP4 Converters for Android & iPhone", cat: "ytmp4" },
+  { url: "https://piventa.com/top-10-ytmp4-alternatives-for-youtube-to-mp4-conversion/", title: "Top 10 YTMP4 Alternatives for YouTube to MP4 Conversion", cat: "ytmp4" },
+  { url: "https://www.dzinsights.com/blog/why-ytmp4-is-the-go-to-tool-for-youtube-to-mp4-conversions", title: "Why YTMP4 is the Go-To Tool for YouTube to MP4 Conversions", cat: "ytmp4" },
+  { url: "https://timebusinessnews.com/best-free-ytmp4-youtube-to-mp4-converters-you-can-try/", title: "Best Free YTMP4 YouTube to MP4 Converters You Can Try", cat: "ytmp4" },
+  { url: "https://feedbox.com/best-ways-to-use-ytmp4-for-high-quality-youtube-to-mp4-downloads/", title: "Best Ways to Use YTMP4 for High-Quality YouTube to MP4 Downloads", cat: "ytmp4" },
+  { url: "https://querykaro.com/top-ytmp4-alternatives-for-youtube-to-mp4-conversion/", title: "Top YTMP4 Alternatives for YouTube to MP4 Conversion", cat: "ytmp4" },
+  { url: "https://joyrulez.com/blogs/156817/Best-10-Free-YouTube-to-MP4-Services-for-2025", title: "Best 10 Free YouTube to MP4 Services for 2025", cat: "ytmp4" },
+  { url: "https://timessquarereporter.com/public/index.php/news/best-youtube-video-downloaders-in-2026", title: "Best YouTube Video Downloaders in 2026", cat: "tools" },
+  { url: "https://design-buzz.com/index.php/2026/01/02/best-free-tools-to-download-youtube-videos/", title: "Best Free Tools to Download YouTube Videos", cat: "tools" },
+  { url: "https://whizolosophy.com/category/the-search-for-happiness/article-essay/best-free-youtube-video-download-tools", title: "Best Free YouTube Video Download Tools", cat: "tools" },
+  { url: "https://nichenest.xyz/top-3-free-youtube-video-download-tools-in-2026/", title: "Top 3 Free YouTube Video Download Tools in 2026", cat: "tools" },
+  { url: "https://theomnibuzz.com/best-free-youtube-video-downloader---fast---easy", title: "Best Free YouTube Video Downloader — Fast & Easy", cat: "tools" },
+  { url: "https://www.theconsumersfeedback.com/guestpost/top-3-fast-and-free-tools-to-convert-youtube-videos-to-mp4", title: "Top 3 Fast and Free Tools to Convert YouTube Videos to MP4", cat: "ytmp4" },
+  { url: "https://mydailyblog.org/ultimate-guide-to-the-best-free-youtube-video-downloaders-without-ads/", title: "Ultimate Guide to the Best Free YouTube Video Downloaders Without Ads", cat: "tools" },
+  { url: "https://questionstation.com/why-youtube-to-mp4-converters-beat-youtube-for-offline-viewing-and-saving-videos/", title: "Why YouTube to MP4 Converters Beat YouTube for Offline Viewing", cat: "ytmp4" },
+  { url: "https://www.dzinsights.com/blog/why-smart-users-are-choosing-youtube-to-mp4-tools-over-official-youtube-features", title: "Why Smart Users Are Choosing YouTube to MP4 Tools Over Official Features", cat: "ytmp4" },
+  { url: "https://repurtech.com/how-to-save-youtube-videos-offline-with-an-mp4-converter/", title: "How to Save YouTube Videos Offline with an MP4 Converter", cat: "ytmp4" },
+  { url: "https://dev.to/ytmp44/turn-youtube-videos-into-mp4-instantly-3-best-converter-sites-in-2026-adp", title: "Turn YouTube Videos into MP4 Instantly — 3 Best Converter Sites in 2026", cat: "ytmp4" },
+  { url: "https://ytmp44.substack.com/p/smart-youtube-video-converter-fast", title: "Smart YouTube Video Converter — Fast & Free", cat: "ytmp4" },
+  // Tubidy articles
+  { url: "https://medium.com/@tubidymp3.is/tubidy-the-perfect-tool-for-on-the-go-music-conversions-2a3fc54664ef", title: "Tubidy — The Perfect Tool for On-the-Go Music Conversions", cat: "tubidy" },
+  { url: "https://timessquarereporter.com/arts/how-to-use-tubidy-to-download-music-and-videos-safely", title: "How to Use Tubidy to Download Music and Videos Safely", cat: "tubidy" },
+  { url: "https://health.thevirallines.net/top-5-reasons-tubidymp3-is-the-best-free-music-downloader", title: "Top 5 Reasons TubidyMP3 is the Best Free Music Downloader", cat: "tubidy" },
+  { url: "https://logcla.com/blogs/386822/TubidyMP3-vs-Competitors-What-Makes-It-Stand-Out", title: "TubidyMP3 vs Competitors — What Makes It Stand Out", cat: "tubidy" },
+  { url: "https://bizbuildboom.com/tubidy-tips-how-to-make-the-most-of-this-free-multimedia-platform/", title: "Tubidy Tips — How to Make the Most of This Free Multimedia Platform", cat: "tubidy" },
+  { url: "https://indibloghub.com/post/the-best-ways-to-use-tubidy-for-offline-entertainment", title: "The Best Ways to Use Tubidy for Offline Entertainment", cat: "tubidy" },
+  { url: "https://genderclarity.org/free-mp3-downloads-made-easy-with-tubidy-converter/", title: "Free MP3 Downloads Made Easy with Tubidy Converter", cat: "tubidy" },
+  { url: "https://thebigblogs.com/blogs/what-is-tubidy/", title: "What is Tubidy? A Complete Overview", cat: "tubidy" },
+  { url: "https://design-buzz.com/index.php/2025/01/28/tubidy-how-to-access-free-music-and-videos/", title: "Tubidy — How to Access Free Music and Videos", cat: "tubidy" },
+  { url: "https://kinkedpress.com/why-tubidy-is-a-go-to-for-free-music-and-video-streaming-in-2025/", title: "Why Tubidy is a Go-To for Free Music and Video Streaming in 2025", cat: "tubidy" },
+  { url: "https://empirenewswire.com/maximizing-your-music-collection-with-tubidy-mp3-downloads/", title: "Maximizing Your Music Collection with Tubidy MP3 Downloads", cat: "tubidy" },
+  { url: "https://houstonstevenson.com/2025/02/11/tubidy-mp3-the-ultimate-guide-to-free-music-downloads/", title: "Tubidy MP3 — The Ultimate Guide to Free Music Downloads", cat: "tubidy" },
+  { url: "https://telegra.ph/Tubidy-The-Ultimate-Guide-to-Free-Music-and-Video-Downloads-02-12", title: "Tubidy — The Ultimate Guide to Free Music and Video Downloads", cat: "tubidy" },
+  { url: "https://blogsgod.com/how-to-use-tubidy-to-download-music-and-videos-a-simple-guide/", title: "How to Use Tubidy to Download Music and Videos — A Simple Guide", cat: "tubidy" },
+  { url: "https://thepoliticus.com/tubidy-uncovered-a-complete-guide-to-free-music-video-downloads/", title: "Tubidy Uncovered — A Complete Guide to Free Music & Video Downloads", cat: "tubidy" },
+  { url: "https://teamcnut.com/tubidy-the-ultimate-tool-for-music-and-video-downloading-in-2025/", title: "Tubidy — The Ultimate Tool for Music and Video Downloading in 2025", cat: "tubidy" },
+  { url: "https://guest-post.org/tubidy-easy-steps-for-downloading-music-and-videos-quickly/", title: "Tubidy — Easy Steps for Downloading Music and Videos Quickly", cat: "tubidy" },
+  { url: "https://tumblrblog.com/tubidy-2025-a-must-have-for-downloading-music-and-videos/", title: "Tubidy 2025 — A Must-Have for Downloading Music and Videos", cat: "tubidy" },
+  { url: "https://relxnn.com/a-beginners-guide-to-tubidy-how-to-download-music-and-videos/", title: "A Beginner's Guide to Tubidy — How to Download Music and Videos", cat: "tubidy" },
+  { url: "https://whizolosophy.com/category/the-search-for-happiness/article-essay/how-tubidy-makes-music-and-video-downloads-easy-in-2025_", title: "How Tubidy Makes Music and Video Downloads Easy in 2025", cat: "tubidy" },
+  { url: "https://trendtracker.us/tubidy-2025-your-go-to-platform-for-music-and-video-downloads/", title: "Tubidy 2025 — Your Go-To Platform for Music and Video Downloads", cat: "tubidy" },
+  { url: "https://allventurehub.com/how-to-download-music-and-videos-fast-with-tubidy-in-2025/", title: "How to Download Music and Videos Fast with Tubidy in 2025", cat: "tubidy" },
+  { url: "https://trendburst.us/the-simple-way-to-download-free-music-and-videos-with-tubidy/", title: "The Simple Way to Download Free Music and Videos with Tubidy", cat: "tubidy" },
+  { url: "https://nichebase.xyz/discover-the-best-features-of-tubidy-for-free-downloads/", title: "Discover the Best Features of Tubidy for Free Downloads", cat: "tubidy" },
+  { url: "https://afriprime.net/blogs/215680/How-to-Use-Tubidy-for-Seamless-Music-and-Video-Downloads", title: "How to Use Tubidy for Seamless Music and Video Downloads", cat: "tubidy" },
+  { url: "https://hallbook.com.br/blogs/506630/Exploring-Tubidy-A-Safe-and-Easy-Way-to-Download-Free", title: "Exploring Tubidy — A Safe and Easy Way to Download Free Media", cat: "tubidy" },
+  { url: "https://www.rumorcircle.com/blogs/67466/Tubidy-The-Easy-Way-to-Download-Music-and-Videos", title: "Tubidy — The Easy Way to Download Music and Videos", cat: "tubidy" },
+  { url: "https://ayema.ng/blogs/163083/How-to-Download-Music-and-Videos-with-Tubidy", title: "How to Download Music and Videos with Tubidy", cat: "tubidy" },
+  { url: "https://bcrelx.com/a-simple-guide-to-free-music-and-video-downloads-on-tubidy/", title: "A Simple Guide to Free Music and Video Downloads on Tubidy", cat: "tubidy" },
+  { url: "https://bresdel.com/blogs/969216/Everything-You-Need-to-Know-About-Tubidy-Downloads", title: "Everything You Need to Know About Tubidy Downloads", cat: "tubidy" },
+  { url: "https://blogsgod.com/everything-you-need-to-know-about-keepvid/", title: "Everything You Need to Know About KeepVid", cat: "tools" },
+  { url: "https://bavave.com/2024/09/09/the-evolution-of-keepvid-how-it-has-changed-over-the-year/", title: "The Evolution of KeepVid — How It Has Changed Over the Years", cat: "tools" },
+  { url: "https://segisocial.com/is-tubidy-safe-and-legal-what-you-need-to-know/", title: "Is Tubidy Safe and Legal? What You Need to Know", cat: "tubidy" },
+  { url: "https://getbacklinkseo.com/tubidy-vs-other-download-platforms-which-one-wins/", title: "Tubidy vs Other Download Platforms — Which One Wins?", cat: "tubidy" },
+  { url: "https://pinlap.com/blogs/50485/Tubidy-vs-YTMP4-Which-Is-the-Best-Free-YouTube-Downloader", title: "Tubidy vs YTMP4 — Which is the Best Free YouTube Downloader?", cat: "tubidy" },
+  { url: "https://timebusinessnews.com/best-youtube-downloaders-in-2025-tubidy-vs-ytmp4/", title: "Best YouTube Downloaders in 2025 — Tubidy vs YTMP4", cat: "tubidy" },
+  { url: "https://yuzela.com/blogs/13013/Tubidy-vs-YTMP4-A-Complete-Guide-to-Downloading-Music", title: "Tubidy vs YTMP4 — A Complete Guide to Downloading Music", cat: "tubidy" },
+  { url: "https://globbook.com/blogs/42255/Tubidy-vs-YTMP4-Which-Converter-is-Best-for-Your-Downloads", title: "Tubidy vs YTMP4 — Which Converter is Best for Your Downloads?", cat: "tubidy" },
+  { url: "https://social.sikatpinoy.net/blogs/13493/Tubidy-vs-YTMP4-Which-Is-the-Best-Video-Downloader-in", title: "Tubidy vs YTMP4 — Which is the Best Video Downloader?", cat: "tubidy" },
+  { url: "https://mag.adseon.xyz/tubidy-vs-ytmp4-which-converter-is-better-in-2025/", title: "Tubidy vs YTMP4 — Which Converter is Better in 2025?", cat: "tubidy" },
+  { url: "https://www.smart-article.com/tubidy-vs-ytmp4-which-video-converter-performs-best-2/", title: "Tubidy vs YTMP4 — Which Video Converter Performs Best?", cat: "tubidy" },
+  { url: "https://discoverydell.com/top-tubidy-alternatives-for-free-music-downloads/", title: "Top Tubidy Alternatives for Free Music Downloads", cat: "tubidy" },
+  { url: "https://reviewsconsumerreports.net/news/tubidy-in-2025--still-worth-using-for-free-music-and-videos", title: "Tubidy in 2025 — Still Worth Using for Free Music and Videos?", cat: "tubidy" },
+  { url: "https://writeupcafe.com/tubidy-in-2025--what-it-is--how-it-works--and-what-to-know", title: "Tubidy in 2025 — What It Is, How It Works & What to Know", cat: "tubidy" },
+  { url: "https://localbizinfo.net/blogs/103999/Tubidy-Review-2025-Safe-Legal-and-Still-the-Best-Free", title: "Tubidy Review 2025 — Safe, Legal, and Still the Best Free Platform?", cat: "tubidy" },
+  { url: "https://squarespaceblog.com/why-tubidy-is-the-best-free-mp3-mp4-download-platform/", title: "Why Tubidy is the Best Free MP3 & MP4 Download Platform", cat: "tubidy" },
+  { url: "https://squarespaceblog.com/tubidy-search-tips-how-to-find-high-quality-songs-fast/", title: "Tubidy Search Tips — How to Find High-Quality Songs Fast", cat: "tubidy" },
+  { url: "https://insidethenation.com/how-to-convert-youtube-videos-to-mp3-using-tubidy/", title: "How to Convert YouTube Videos to MP3 Using Tubidy", cat: "tubidy" },
+  { url: "https://www.earthlyblogging.com/tubidy-the-hidden-gem-for-free-music-video-downloads/", title: "Tubidy — The Hidden Gem for Free Music & Video Downloads", cat: "tubidy" },
+  { url: "https://ourfathersfamily.com/blogs/28891/Tubidy-MP3-2025-Fast-Free-Music-Downloads-on-PC-Mobile", title: "Tubidy MP3 2025 — Fast, Free Music Downloads on PC & Mobile", cat: "tubidy" },
+  { url: "https://joyrulez.com/blogs/158584/Top-Reasons-Tubidy-MP3-is-the-Best-Free-Music-Downloader", title: "Top Reasons Tubidy MP3 is the Best Free Music Downloader", cat: "tubidy" },
+  { url: "https://theomnibuzz.com/top-10-features-that-make-tubidy-a-must-have-platform", title: "Top 10 Features That Make Tubidy a Must-Have Platform", cat: "tubidy" },
+  { url: "https://www.gratisnyheder.dk/2026/05/tubidy-mp3-downloader-is-it-really-worth-using/", title: "Tubidy MP3 Downloader — Is It Really Worth Using?", cat: "tubidy" },
+  { url: "https://citoyen.auxerrelacommune.com/read-blog/44128_tubidy-review-is-it-worth-using-in-2026.html", title: "Tubidy Review — Is It Worth Using in 2026?", cat: "tubidy" },
+  { url: "https://nexto.club/blogs/50235/Tubidy-in-2026-Everything-You-Should-Know", title: "Tubidy in 2026 — Everything You Should Know", cat: "tubidy" },
+  { url: "https://nguza.com/blogs/46063/Everything-You-Need-to-Know-About-Tubidy-in-2026", title: "Everything You Need to Know About Tubidy in 2026", cat: "tubidy" },
+  // MP3 Tools
+  { url: "https://topicterritory.com/the-ultimate-guide-to-building-your-mp3-music-library/", title: "The Ultimate Guide to Building Your MP3 Music Library", cat: "mp3" },
+  { url: "https://contentsbag.com/learn-how-to-convert-videos-to-audio-files-for-offline-listening/", title: "Learn How to Convert Videos to Audio Files for Offline Listening", cat: "mp3" },
+  { url: "https://webrankedsolutions.com/entertainment/ytmp4-unlocking-seamless-video-to-audio-conversion/", title: "YTMP4 — Unlocking Seamless Video to Audio Conversion", cat: "mp3" },
+  { url: "https://goli.breezio.com/article/6679157606864559865/which-is-the-best-youtube-to-mp3-converter-for-android-free", title: "Which is the Best YouTube to MP3 Converter for Android? Free Options", cat: "mp3" },
+  { url: "https://houstonstevenson.com/2024/08/15/how-to-convert-youtube-to-mp3-for-free-on-your-mobile/", title: "How to Convert YouTube to MP3 for Free on Your Mobile", cat: "mp3" },
+  { url: "https://www.pr6-articles.com/Articles-of-2024/top-3-software-convert-youtube-video-mp3-mp4", title: "Top 3 Software to Convert YouTube Video to MP3 & MP4", cat: "mp3" },
+  { url: "https://telegra.ph/3-Free-tools-to-Download-audio-and-video-from-YouTube-09-04", title: "3 Free Tools to Download Audio and Video from YouTube", cat: "mp3" },
+  { url: "https://www.theconsumersfeedback.com/guestpost/top-free-tools-to-download-youtube-videos-to-mp3", title: "Top Free Tools to Download YouTube Videos to MP3", cat: "mp3" },
+  { url: "https://proarticle.adseon.xyz/best-youtube-to-mp3-download-tools/", title: "Best YouTube to MP3 Download Tools", cat: "mp3" },
+  { url: "https://drukarnia.com.ua/articles/convert-youtube-to-mp4-in-under-30-seconds-fyx5v", title: "Convert YouTube to MP4 in Under 30 Seconds", cat: "ytmp4" },
+  { url: "https://www.myseodirectory.com/best-youtube-to-mp3-converters-for-every-device/", title: "Best YouTube to MP3 Converters for Every Device", cat: "mp3" },
+  // General tools
+  { url: "https://factofit.com/maximizing-download-speed-with-keepvid-youtube-downloader/", title: "Maximizing Download Speed with KeepVid YouTube Downloader", cat: "tools" },
+  { url: "https://factstea.com/keepvid-youtube-downloader-tips-for-managing-and-organizing-your-downloads/", title: "KeepVid Tips for Managing and Organizing Your Downloads", cat: "tools" },
+  { url: "https://blogiefy.com/the-future-of-keepvid-youtube-downloader-whats-next/", title: "The Future of KeepVid YouTube Downloader — What's Next?", cat: "tools" },
+  { url: "https://toastul.com/entertainment/keepvid-youtube-downloader-high-quality-video-downloads/", title: "KeepVid YouTube Downloader — High-Quality Video Downloads", cat: "tools" },
+  { url: "https://gamesbad.com/keepvid-for-content-creators-how-to-efficiently-manage-your-media/", title: "KeepVid for Content Creators — How to Efficiently Manage Your Media", cat: "tools" },
+  { url: "https://latestnewsusa.com/keepvid-the-essential-tool-for-collecting-and-enjoying-your-favorite-videos/", title: "KeepVid — The Essential Tool for Collecting Your Favorite Videos", cat: "tools" },
+  { url: "https://blague-courte.com/keepvid-the-best-choice-for-free-youtube-downloading", title: "KeepVid — The Best Choice for Free YouTube Downloading", cat: "tools" },
+  { url: "https://blague-courte.com/ytmp4-the-incredible-tool-for-youtube-to-mp4-downloads", title: "YTMP4 — The Incredible Tool for YouTube to MP4 Downloads", cat: "ytmp4" },
+  { url: "https://nwacolorado.org/download-youtube-videos-easily-3-best-mp4-converter-sites-in-2026/", title: "Download YouTube Videos Easily — 3 Best MP4 Converter Sites in 2026", cat: "ytmp4" },
+  { url: "https://www.warticles.com/user/article/stop-streaming-use-these-3-youtube-mp4-converters-to-save-videos-fast/", title: "Stop Streaming — Use These 3 YouTube MP4 Converters to Save Videos Fast", cat: "ytmp4" },
+  { url: "https://nichenest.xyz/tubidy-a-simple-guide-to-free-music-and-video-downloads/", title: "Tubidy — A Simple Guide to Free Music and Video Downloads", cat: "tubidy" },
+  { url: "https://ideaepic.com/tubidy-for-beginners-how-to-download-music-and-videos-effortlessly/", title: "Tubidy for Beginners — How to Download Music and Videos Effortlessly", cat: "tubidy" },
+  { url: "https://inspirejournal.xyz/unlock-free-music-and-video-downloads-with-tubidy-a-step-by-step-guide/", title: "Unlock Free Music and Video Downloads with Tubidy — Step-by-Step Guide", cat: "tubidy" },
+  { url: "https://nwacolorado.org/build-your-personal-music-library-with-tubidy/", title: "Build Your Personal Music Library with Tubidy", cat: "tubidy" },
+  { url: "https://feeds.com/best-ways-to-use-ytmp4-for-high-quality-youtube-to-mp4-downloads/", title: "Best Ways to Use YTMP4 for High-Quality Downloads", cat: "ytmp4" },
+  { url: "https://www.wisdom-all-the-best.com/blog/Top-Benefits-of-Converting-YouTube-Videos-to-MP4-with-YTMP4", title: "Top Benefits of Converting YouTube Videos to MP4 with YTMP4", cat: "ytmp4" },
+  { url: "https://fastpanda.in/2025/04/30/how-tubidy-keeps-your-favorite-songs-just-one-click-away/", title: "How Tubidy Keeps Your Favorite Songs Just One Click Away", cat: "tubidy" },
+  { url: "https://digital24hour.com/discover-tubidy-your-hub-for-free-music-and-video-access/", title: "Discover Tubidy — Your Hub for Free Music and Video Access", cat: "tubidy" },
+  { url: "https://bizdirectoryhub.com/how-to-stay-safe-while-downloading-free-content-on-tubidy/", title: "How to Stay Safe While Downloading Free Content on Tubidy", cat: "tubidy" },
+  { url: "https://edutous.com/tubidy-for-students-study-with-music-anytime-anywhere/", title: "Tubidy for Students — Study with Music Anytime, Anywhere", cat: "tubidy" },
+  { url: "https://trendverity.com/top-movies-and-clips-you-can-download-for-free-with-tubidy/", title: "Top Movies and Clips You Can Download for Free with Tubidy", cat: "tubidy" },
+  { url: "https://www.globalnetbit.com/miscellaneous/mp3-made-easy-how-tubidy-simplifies-song-downloads/", title: "MP3 Made Easy — How Tubidy Simplifies Song Downloads", cat: "tubidy" },
+  { url: "https://www.omahanewswire.com/from-streaming-to-storing-the-best-way-to-get-mp3s-on-tubidy", title: "From Streaming to Storing — The Best Way to Get MP3s on Tubidy", cat: "tubidy" },
+  { url: "https://speakrights.com/quick-and-easy-music-downloads-tubidys-one-click-simplicity/", title: "Quick and Easy Music Downloads — Tubidy's One-Click Simplicity", cat: "tubidy" },
+  { url: "https://discoverydell.com/tubidy-for-music-lovers-discover-download-and-enjoy-your-favorite-tracks-anytime/", title: "Tubidy for Music Lovers — Discover, Download & Enjoy Tracks Anytime", cat: "tubidy" },
+  { url: "https://piventa.com/tubidy-the-fastest-way-to-download-your-favorite-music/", title: "Tubidy — The Fastest Way to Download Your Favorite Music", cat: "tubidy" },
+  { url: "https://dreex.net/blogs/19127/Tubidy-vs-YTMP3-The-Ultimate-Showdown-You-Need-to-See", title: "Tubidy vs YTMP3 — The Ultimate Showdown You Need to See", cat: "tubidy" },
+  { url: "https://dev.to/y2meta/tubidy-free-music-and-video-downloader-483", title: "Tubidy — Free Music and Video Downloader", cat: "tubidy" },
+  { url: "https://www.gratisnyheder.dk/2025/08/top-trending-songs-downloaded-on-tubidy-this-month/", title: "Top Trending Songs Downloaded on Tubidy This Month", cat: "tubidy" },
+  { url: "https://dailystorypro.com/free-music-anytime-how-tubidy-makes-listening-effortless/", title: "Free Music Anytime — How Tubidy Makes Listening Effortless", cat: "tubidy" },
+  { url: "https://australianewsnetwork.com/why-tubidy-is-your-one-stop-shop-for-entertainment-downloads/", title: "Why Tubidy is Your One-Stop Shop for Entertainment Downloads", cat: "tubidy" },
+  { url: "https://informationkhabar.com/why-tubidy-is-still-one-of-the-most-popular-music-platforms/", title: "Why Tubidy is Still One of the Most Popular Music Platforms", cat: "tubidy" },
+  { url: "https://paragraph.com/@god-bavuma@protonmail.com/tubidy-or-mp3juice-best-tool-for-mp3-downloads-compared", title: "Tubidy or MP3Juice — Best Tool for MP3 Downloads Compared", cat: "tubidy" },
+  { url: "https://seoandblogging.com/tubidy-vs-other-downloaders-why-it-s-the-best-for-free-music", title: "Tubidy vs Other Downloaders — Why It's the Best for Free Music", cat: "tubidy" },
+  { url: "https://backlinktrap.com/tubidy-guide-for-safe-and-simple-media-downloads/", title: "Tubidy Guide for Safe and Simple Media Downloads", cat: "tubidy" },
+  { url: "https://write.as/tubidymp3/ultimate-guide-to-using-tubidy-for-free-downloads", title: "Ultimate Guide to Using Tubidy for Free Downloads", cat: "tubidy" },
+  { url: "https://theviralblogs.com/tubidy-mp3-quick-access-to-your-favorite-songs/", title: "Tubidy MP3 — Quick Access to Your Favorite Songs", cat: "tubidy" },
+  { url: "https://bdnews55.com/2025/10/14/tubidy-for-pc-mobile-music-without-limits/", title: "Tubidy for PC & Mobile — Music Without Limits", cat: "tubidy" },
+  { url: "https://picgiraffe.com/tubidy-unplugged-the-comeback-of-free-music-in-2025/", title: "Tubidy Unplugged — The Comeback of Free Music in 2025", cat: "tubidy" },
+  { url: "https://onlinetechlearner.com/tubidy-mp3-download-guide-for-music-lovers/", title: "Tubidy MP3 Download Guide for Music Lovers", cat: "tubidy" },
+  { url: "https://overlypost.com/use-tubidy-for-free-mp3-and-mp4-downloads/", title: "Use Tubidy for Free MP3 and MP4 Downloads", cat: "tubidy" },
+  { url: "https://www.articlealley.com/news/tubidy-mp3-download-made-easy-67268", title: "Tubidy MP3 Download Made Easy", cat: "tubidy" },
+  { url: "https://regic.net/how-to-download-mp3-mp4-easily-with-tubidy-in-2025/", title: "How to Download MP3 & MP4 Easily with Tubidy in 2025", cat: "tubidy" },
+  { url: "https://weeblyblog.com/how-to-use-tubidy-on-mobile-a-quick-guide-for-android-and-ios/", title: "How to Use Tubidy on Mobile — A Quick Guide for Android and iOS", cat: "tubidy" },
+  { url: "https://websiteseotonic.com/using-tubidy-on-your-phone-step-by-step-for-android-ios/", title: "Using Tubidy on Your Phone — Step-by-Step for Android & iOS", cat: "tubidy" },
+  { url: "https://weeblyblog.com/a-hassle-free-guide-to-downloading-mp3s-from-tubidy/", title: "A Hassle-Free Guide to Downloading MP3s from Tubidy", cat: "tubidy" },
+  { url: "https://velog.io/@y2meta/How-Tubidy-Works-for-MP3-Music", title: "How Tubidy Works for MP3 Music", cat: "tubidy" },
+  { url: "https://mabiab.com/articles/read/how-tubidy-is-changing-digital-audio-access-on-mobile_56847.html", title: "How Tubidy is Changing Digital Audio Access on Mobile", cat: "tubidy" },
+  { url: "https://articlespost.com/tubidy-vs-ytmp4-which-is-the-best-video-downloader-in-2025/", title: "Tubidy vs YTMP4 — Which is the Best Video Downloader in 2025?", cat: "tubidy" },
+  { url: "https://www.perrysplacepromotions.org/blog/tubidy-vs-flvto-%E2%80%93-complete-comparison-guide", title: "Tubidy vs FLVTO — Complete Comparison Guide", cat: "tubidy" },
+  { url: "https://enhanceyourwebsites.com/creating-your-own-music-collection-with-tubidy/", title: "Creating Your Own Music Collection with Tubidy", cat: "tubidy" },
+  { url: "https://thingzi.co.uk/entertainment/tubidy-mp3-downloader-in-2026-still-worth-using/", title: "Tubidy MP3 Downloader in 2026 — Still Worth Using?", cat: "tubidy" },
+  { url: "https://www.articleswebhunk.in/tubidy-app-or-web-find-out-which-is-better-in-2026/", title: "Tubidy App or Web — Find Out Which is Better in 2026", cat: "tubidy" },
+  { url: "https://social.japrime.id/read-blog/100148", title: "Tubidy — A Guide to Free Music Downloads", cat: "tubidy" },
+  { url: "https://www.kompasiana.com/tubidy/688ca9e634777c0dff416d93/tubidy-download-your-favorite-youtube-music-and-video-quickly", title: "Tubidy — Download Your Favorite YouTube Music and Video Quickly", cat: "tubidy" },
+  { url: "https://www.warticles.com/user/article/top-5-youtube-downloaders-to-save-videos-offline-in-2025/", title: "Top 5 YouTube Downloaders to Save Videos Offline in 2025", cat: "tools" },
+  { url: "https://expressy.co.in/best-free-youtube-video-downloaders/", title: "Best Free YouTube Video Downloaders", cat: "tools" },
+  { url: "https://articlewaves.com/top-free-online-tools-to-download-youtube-videos/", title: "Top Free Online Tools to Download YouTube Videos", cat: "tools" },
+  { url: "https://www.articlealley.com/news/best-youtube-downloader-tools-for-fast-safe-downloads-76541", title: "Best YouTube Downloader Tools for Fast & Safe Downloads", cat: "tools" },
+  { url: "https://blogland.adseon.xyz/top-5-youtube-downloaders-for-fast-and-efficient-conversions/", title: "Top 5 YouTube Downloaders for Fast and Efficient Conversions", cat: "tools" },
+  { url: "https://network.musicdiffusion.com/read-blog/60875_top-youtube-video-downloaders-for-all-devices.html", title: "Top YouTube Video Downloaders for All Devices", cat: "tools" },
+  { url: "https://ok-gud.com/blogs/41654/Top-YouTube-Video-Downloaders-for-Quick-and-Easy-Downloads", title: "Top YouTube Video Downloaders for Quick and Easy Downloads", cat: "tools" },
+  { url: "https://blogingers.com/top-youtube-downloaders-for-high-quality-downloads/", title: "Top YouTube Downloaders for High-Quality Downloads", cat: "tools" },
+  { url: "https://wtoregister.com/en/articles/1529/best-youtube-downloaders-for-every-device", title: "Best YouTube Downloaders for Every Device", cat: "tools" },
+  { url: "https://www.shofney.com/blogs/24710/Best-YouTube-Downloader-Tools-for-Fast-Video-Downloads", title: "Best YouTube Downloader Tools for Fast Video Downloads", cat: "tools" },
+];
+
+const PER_PAGE = 24;
+let currentPage = 1;
+let currentCat  = "all";
+let searchTerm  = "";
+
+function getDomain(url) {
+  try { return new URL(url).hostname.replace("www.", ""); }
+  catch { return url; }
+}
+
+function getFiltered() {
+  return allLinks.filter(a => {
+    const catOk  = currentCat === "all" || a.cat === currentCat;
+    const termOk = !searchTerm || a.title.toLowerCase().includes(searchTerm);
+    return catOk && termOk;
+  });
+}
+
+function render() {
+  const filtered = getFiltered();
+  const total    = filtered.length;
+  const pages    = Math.ceil(total / PER_PAGE);
+  if (currentPage > pages) currentPage = 1;
+
+  const slice = filtered.slice((currentPage-1)*PER_PAGE, currentPage*PER_PAGE);
+
+  document.getElementById("article-count").textContent =
+    total + " article" + (total !== 1 ? "s" : "");
+
+  const grid = document.getElementById("articles-grid");
+  grid.innerHTML = slice.map(a => `
+    <article class="article-card" data-cat="${a.cat}">
+      <div class="card-category">${catLabel(a.cat)}</div>
+      <div class="card-body">
+        <a href="${a.url}" target="_blank" rel="noopener noreferrer">${a.title}</a>
+        <span class="card-source">${getDomain(a.url)}</span>
+      </div>
+    </article>
+  `).join("");
+
+  // Pagination
+  const pag = document.getElementById("pagination");
+  if (pages <= 1) { pag.innerHTML = ""; return; }
+
+  let btns = "";
+  if (currentPage > 1) btns += `<button class="page-btn" onclick="goPage(${currentPage-1})">‹</button>`;
+  const start = Math.max(1, currentPage-2), end = Math.min(pages, currentPage+2);
+  if (start > 1) btns += `<button class="page-btn" onclick="goPage(1)">1</button><span class="page-info">…</span>`;
+  for (let i = start; i <= end; i++) {
+    btns += `<button class="page-btn${i===currentPage?" active":""}" onclick="goPage(${i})">${i}</button>`;
+  }
+  if (end < pages) btns += `<span class="page-info">…</span><button class="page-btn" onclick="goPage(${pages})">${pages}</button>`;
+  if (currentPage < pages) btns += `<button class="page-btn" onclick="goPage(${currentPage+1})">›</button>`;
+  btns += `<span class="page-info">${currentPage} / ${pages}</span>`;
+  pag.innerHTML = btns;
+}
+
+function catLabel(c) {
+  return { ytmp4:"YouTube MP4", tubidy:"Tubidy", mp3:"MP3 Tools", tools:"Downloaders" }[c] || c;
+}
+
+function setFilter(cat, btn) {
+  currentCat  = cat;
+  currentPage = 1;
+  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  render();
+}
+
+function filterArticles() {
+  searchTerm  = document.getElementById("search-input").value.toLowerCase().trim();
+  currentPage = 1;
+  render();
+}
+
+function goPage(n) {
+  currentPage = n;
+  document.getElementById("articles").scrollIntoView({ behavior: "smooth" });
+  render();
+}
+
+document.getElementById("search-input").addEventListener("keydown", e => {
+  if (e.key === "Enter") filterArticles();
+});
+
+render();
+</script>
+</body>
+</html>
